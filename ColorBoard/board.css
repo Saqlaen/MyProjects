@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0;
+    font-family: consolas;
+}
+h2{
+    color: white;
+    font-family: inherit;
+    font-size:3vh;
+
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.square{
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+    background-color: #1d1d1d;
+    box-shadow: 0 0 2px #000;
+    transition: 4s linear;
+}
+
+.square:hover {
+    transition-duration: 0s; 
+}
