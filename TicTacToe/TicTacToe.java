@@ -54,7 +54,7 @@ public class TicTacToe extends JFrame implements ActionListener{
             buttons[i].setFont(new Font("MV Boli",Font.BOLD,120));
 			buttons[i].setFocusable(false);
 			buttons[i].addActionListener(this);
-			buttons[i].setBackground( new Color(96,96,96) );
+			buttons[i].setBackground( new Color(59,53,53) );
         }
 
         this.add(titlePanel, BorderLayout.NORTH);
