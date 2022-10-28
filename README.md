@@ -8,7 +8,7 @@ Below are the list of projects on DSA( JAVA )
 | #2   | [Quiz Game](https://github.com/Saqlaen/MyProjects/tree/main/QuizGame)        |  Java( Swing, OOPs)     | 
 | #3   | [Tic-Tac-Toe](https://github.com/Saqlaen/MyProjects/tree/main/TicTacToe)     |  Java( Swing, OOPs)     | 
 | #4   | [Library Management fx](https://github.com/Saqlaen/MyProjects/tree/main/LibraryManagementFX/LibraryMangement/src/main)     |  Java( OOPs, fx, SQL, CRUD operations)    | 
-| #5   | [Product Mangement fx](https://github.com/Saqlaen/MyProjects/tree/main/Product_WebsiteFX/src/main)     |  Java( OOPs, fx, SQL, CRUD operations)     |
+| #5   | [Product Website Mangement fx](https://github.com/Saqlaen/MyProjects/tree/main/Product_WebsiteFX/src/main)     |  Java( OOPs, fx, SQL, CRUD operations)     |
 
 ## Acknowledgements
 
