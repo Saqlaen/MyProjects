@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.product_websitefx.CustomerController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="464.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.product_websitefx.CustomerController">
+   <children>
+      <TextField fx:id="tfSearch" layoutX="31.0" layoutY="24.0" prefHeight="26.0" prefWidth="173.0" promptText="Enter the item you want to search" />
+      <Button fx:id="searchBtn" layoutX="214.0" layoutY="24.0" mnemonicParsing="false" onAction="#ActionHandler" prefHeight="26.0" prefWidth="78.0" text="Search" />
+      <TableView fx:id="tvProduct" layoutX="330.0" layoutY="24.0" onMouseClicked="#MouseAction" prefHeight="414.0" prefWidth="393.0">
+        <columns>
+          <TableColumn fx:id="colPid" prefWidth="60.79998779296875" text="pid" />
+          <TableColumn fx:id="colName" prefWidth="143.20001220703125" text="name" />
+            <TableColumn fx:id="colPrice" prefWidth="82.4000244140625" text="price" />
+            <TableColumn fx:id="colQuantity" prefWidth="108.0" text="quantity" />
+        </columns>
+      </TableView>
+      <VBox layoutX="30.0" layoutY="89.0" prefHeight="274.0" prefWidth="247.0" spacing="10.0">
+         <children>
+            <TextField fx:id="tfName" editable="false" promptText="Selected item will display here" />
+            <TextField fx:id="tfPrice" editable="false" promptText="Selected item will display here" />
+            <TextField fx:id="tfQuantity" promptText="Enter the No of Quantity" />
+            <Button fx:id="buyBtn" alignment="CENTER" mnemonicParsing="false" onAction="#ActionHandler" prefHeight="26.0" prefWidth="110.0" text="Buy" textAlignment="CENTER" />
+            <Label fx:id="labelMessage" alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="251.0" text="Select the model you wanna buy --&gt;" textFill="#262323" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
