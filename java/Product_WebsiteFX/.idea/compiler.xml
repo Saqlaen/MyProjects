@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Product_WebsiteFX" target="0" />
+      <module name="Product_WebsiteFX" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>
