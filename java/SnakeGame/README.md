@@ -1,4 +1,4 @@
-##snapshot of how the game looks
+# snapshot of how the game looks
 
 -->the apple will appear at random loacation every time and a score is maintained to count the no of apples eaten
 <br>
