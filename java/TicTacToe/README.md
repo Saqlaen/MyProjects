@@ -1,4 +1,4 @@
-## snapshots on how the application looks
+# snapshots on how the application looks
 -->it chooses who's turn it will be for the player instead of them having to fight
 <br>
 <img src="https://github.com/Saqlaen/MyProjects/blob/main/java/TicTacToe/Screenshot%20(5).png" height=300 width="300">
