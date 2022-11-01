@@ -10,7 +10,7 @@ Below are the list of projects on DSA( JAVA )
 | #4   | [Calculator](https://github.com/Saqlaen/MyProjects/tree/main/java/Calculator)     |  Java( Swing, OOPs)     | 
 | #5   | [Library Management fx](https://github.com/Saqlaen/MyProjects/tree/main/java/LibraryManagementFX/LibraryMangement/src/main)     |  Java( OOPs, fx, SQL, CRUD operations)    | 
 | #6 | [tic-tac-toe](https://github.com/Saqlaen/MyProjects/tree/main/HTML_CSS_JAVASCRIPT/TicTacToe(Javascript))| html,css,javascript|
-| #7 | [snake game](https://github.com/Saqlaen/MyProjects/tree/main/java/Snake%20Game) | java(oops, swing)|
+| #7 | [snake game](https://github.com/Saqlaen/MyProjects/tree/main/java/SnakeGame) | java(oops, swing)|
 
 ## Acknowledgements
 
