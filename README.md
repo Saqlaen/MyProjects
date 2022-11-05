@@ -12,10 +12,4 @@ Below are the list of projects on DSA( JAVA )
 | #6 | [tic-tac-toe](https://github.com/Saqlaen/MyProjects/tree/main/HTML_CSS_JAVASCRIPT/TicTacToe(Javascript))| html,css,javascript|
 | #7 | [snake game](https://github.com/Saqlaen/MyProjects/tree/main/java/SnakeGame) | java(oops, swing)|
 
-## Acknowledgements
 
-<pre>
-The projects discussed in this repo are taken from various sources rights to them belongs to their respective owners only. 
-This repo is just a way to practice and  build 
-and learn web technologies like HTML, CSS, Bootstrap, Javascript, React, Java and Redux.
-</pre>
