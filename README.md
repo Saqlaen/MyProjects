@@ -2,7 +2,7 @@
 
 Below are the list of projects on DSA( JAVA )
 
-| No   | Project Name                                                                 |  Language Used          |
+| No   | Project Name                                                                 |  Technology Used          |
 |----- |------------------------------------------------------------------------------|-------------------------|
 | #1   | [Tic-Tac-Toe](https://github.com/Saqlaen/MyProjects/tree/main/java/TicTacToe)     |  Java( Swing, OOPs)     | 
 | #2   | [Product Website Mangement fx](https://github.com/Saqlaen/MyProjects/tree/main/java/Product_WebsiteFX/src/main)     |  Java( OOPs, fx, SQL, CRUD operations)     |
