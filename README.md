@@ -11,6 +11,6 @@ Below are the list of projects on DSA( JAVA )
 | #5   | [Library Management fx](https://github.com/Saqlaen/MyProjects/tree/main/java/LibraryManagementFX/LibraryMangement/src/main)     |  Java( OOPs, fx, SQL, CRUD operations)    | 
 | #6 | [tic-tac-toe](https://github.com/Saqlaen/MyProjects/tree/main/HTML_CSS_JAVASCRIPT/TicTacToe(Javascript))| html,css,javascript|
 | #7 | [snake game](https://github.com/Saqlaen/MyProjects/tree/main/java/SnakeGame) | java(oops, swing)|
-| #8 | [store](https://github.com/Saqlaen/MyProjects/tree/main/java/productCRUD/src/main/java/productCRUD)| java,spring,servlet,hibernate,oops,spring mvc |
+| #8 | [store](https://github.com/Saqlaen/MyProjects/tree/main/java/productCRUD/src/main/java/productCRUD)| java,spring,servlet,hibernate,oops,spring mvc|
 
 
