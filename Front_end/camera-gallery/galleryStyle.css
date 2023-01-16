@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #a9b2bb;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.media {
+    height: 15.4rem;
+    width: 16rem;
+    border-radius: 3px;
+    object-fit: cover;
+    overflow: hidden;
+
+}
+
+.video-container {
+
+    width: 100%;
+    height: 80%;
+    padding: 0.5rem;
+    overflow: hidden;
+    background-color: #3f2266;
+}
+
+.video-container > *{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.action {
+    width: 100%;
+    height: 20%;
+    background-color: #3f2266;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 2.5rem;
+    width: 7.5rem;
+    background-color: #7e4fc0;
+    font-size: 1.3rem;
+    color: #3f2266;
+    border-radius: 5px;
+}
+
+.download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 2.5rem;
+    width: 7.5rem;
+    background-color: #7e4fc0;
+    font-size: 1.3rem;
+    color: #3f2266;
+    border-radius: 5px;  
+}
+
+.back {
+    position: absolute;
+    height: 2rem;
+    width: 6rem;
+    top: calc( 100vh - 5vh);
+    right: 2rem;
+    background-color: #492874;
+    border-radius: 5px;
+    color: rgb(18, 4, 4);
+    text-align: center;
+    line-height: 2;
+    font-family: 'consolas';
+}

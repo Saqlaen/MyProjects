@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.video-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+}
+
+.action-container {
+    position: absolute;
+    height: 15rem;
+    top: calc( (100vh - 15rem) / 2 );
+    right: 2rem;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.action-container > div {
+    border: 5px solid white;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.record-btn {
+    background-color: rgb(201, 35, 35);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.capture-btn {
+    background-color: white;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.scale-record {
+    animation-name: record;  
+    animation-iteration-count: infinite;
+    animation-duration: 1s; 
+}
+
+.scale-capture {
+    animation-name: capture;  
+    animation-iteration-count: 1;
+    animation-duration: 2s; 
+}
+
+@keyframes record {
+    0%{ 
+        transform: scale(0.8);
+    }
+    50%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes capture {
+    0%{
+        transform: scale(0.8);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+.timer-container{
+    font-family: consolas;
+    font-size: 1rem;
+    color: red;
+    position: absolute;
+    top: calc( 100vh - 12vh);
+    left: calc( (100vw - 15vw) / 2 );
+    cursor: pointer;
+    z-index: 3;
+    
+}
+.timer {
+    display: none;
+    z-index: inherit;
+}
+.filter-container {
+    height: 16rem;
+    width: 5rem;
+    background-color: lightblue;
+    position: absolute;
+    top: calc( (100vh - 16rem) /2  );
+    left: 2rem;
+    cursor: pointer;
+    z-index: 2;
+
+}
+
+.filter {
+    height: 4rem;
+    width: 5rem;
+    background: url('https://picsum.photos/200');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-blend-mode: color-burn;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.orange {
+    background-color: #ffa60037;
+}
+
+.blue {
+    background-color: #5a5ac33b;
+}
+
+.red {
+    background-color: #de1f1f3e;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.filter-screen {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height:100vh;
+    background-color: none;
+    z-index: 1;
+}
+
+.galleryIcon {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    top: calc( 100vh - 10vh );
+    right: 3rem;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    z-index: 3;
+}

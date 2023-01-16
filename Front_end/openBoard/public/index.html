@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open board</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/a80e27de06.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="options-container">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="tools-container scale-tools">
+        <div class="pencil">
+            <img class="pencilsvg" src="../svg/pen.svg">
+            <div class="pencil-tool">
+                <div class="pencil-width">
+                    <input class="pencil-tool-width"  type="range" min="2" max="10" value="2" name="pencil-width" id="pencil-width">
+                </div>
+                <div class="pencil-colors">
+                    <div class="pencil-color black"></div>
+                    <div class="pencil-color blue"></div>
+                    <div class="pencil-color red"></div>
+                </div>    
+            </div>
+        </div>
+        <img class="downloadsvg" src="../svg/download.svg">
+        <img class="uploadsvg" src="../svg/upload.svg">
+        <div class="eraser">
+            <img class="erasersvg" src="../svg/eraser.svg">
+            <div class="eraser-tool">
+                <input class="eraser-tool-width"  type="range" min="2" max="10" value="2" name="eraser-width" id="eraser-width">
+            </div>
+        </div>
+        <img class="stickysvg" src="../svg/sticky.svg">
+        <img class="undosvg" src="../svg/undo.svg">
+        <img class="redosvg" src="../svg/redo.svg">
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
+    <script>
+        // let socket = io.connect('http://localhost:5000'); 
+        // console.log( socket )
+    </script>
+    <script src="./tool.js"></script>
+    <script src="./canvas.js"></script>
+</body>
+</html>
