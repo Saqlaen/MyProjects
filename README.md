@@ -1,6 +1,6 @@
 # MyProjects
 
-Below are the list of projects on DSA( JAVA )
+Below are the list of projects
 
 | No   | Project Name                                                                 |  Technology Used          |
 |----- |------------------------------------------------------------------------------|-------------------------|
