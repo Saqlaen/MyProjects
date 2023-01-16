@@ -12,5 +12,15 @@ Below are the list of projects on DSA( JAVA )
 | #6 | [tic-tac-toe](https://github.com/Saqlaen/MyProjects/tree/main/HTML_CSS_JAVASCRIPT/TicTacToe(Javascript))| html,css,javascript|
 | #7 | [snake game](https://github.com/Saqlaen/MyProjects/tree/main/java/SnakeGame) | java(oops, swing)|
 | #8 | [store](https://github.com/Saqlaen/MyProjects/tree/main/java/productCRUD/src/main/java/productCRUD)| java,spring,servlet,hibernate,oops,spring mvc|
+| #9 | [youtube Automation]()| Node js ( request, cheerio, puppeteer, fs, xlsx )|
+| #10 | [Hackerrank automation]()| Node js ( request, puppeteer, cheerio, fs, xlsx) |
+| #11 | [books webscraping]()|  Node js ( request, cheerio, fs, xlsx) |
+| #12 | [ github webscraping () ]()| Node js ( request, cheerio, fs, xlsx) |
+| #13 | [ JIRA ticket management design  ]()| font-end HTML, CSS, JAVASCRIPT, BROWSER LOCAL STORAGE, BOOTSTRAP |
+| #14 | [ camera galary ]()| front-end HTML, CSS, JAVASCRIPT, BROWSER INDEXED DB STORAGE, Navigator.MediaDevice, BOOTSTRAP |
+| #15 | [ openboard clone] () | front-end HTML, CSS, JAVASCRIPT, BROWSER LOCAL STORAGE, BOOTSTRAP, CANVAS API  |
+| #16 | [ to-do-list] () | ReactJS |
+| #17 | [ Movies app ] () | ReactJS, BROWSER LOCAL STORAGE, AXIOS,  |
+
 
 
