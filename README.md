@@ -17,7 +17,7 @@ Below are the list of projects on DSA( JAVA )
 | #11  | [ camera galary ] ()| front-end HTML, CSS, JAVASCRIPT, BROWSER INDEXED DB STORAGE, Navigator.MediaDevice, BOOTSTRAP |
 | #12  | [ openboard clone] () | front-end HTML, CSS, JAVASCRIPT, BROWSER LOCAL STORAGE, BOOTSTRAP, CANVAS API  |
 | #13  | [ to-do-list] () | ReactJS |
-| #14  | [ Movies app ] () | ReactJS, BROWSER LOCAL STORAGE, AXIOS,  |
+| #14  | [ Movies app ] () | ReactJS, react-router-dom, BOOTSTRAP, BROWSER LOCAL STORAGE, AXIOS,  |
 
 
 
