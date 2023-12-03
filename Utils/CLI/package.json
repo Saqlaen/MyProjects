@@ -1,0 +1,17 @@
+{
+  "name": "msa-cli-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./SourceCode/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli-tools"
+  ],
+  "bin": {
+    "file-orgy": "./SourceCode/index.js"
+  },
+  "author": "msa",
+  "license": "ISC"
+}
