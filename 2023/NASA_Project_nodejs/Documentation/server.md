@@ -43,3 +43,12 @@ in script's add the following's
   }
 }
 ```
+
+npm run server && npm run client `&& will wait till npm run server to complete and then run npm run client`
+we replace && with &  `& will run first command in background and will also run the other command`
+
+### npm packages used
+
+1. `morgan` to get additional functionality
+    1. allows us to log in different formats
+    2. we can use the most common combined format
