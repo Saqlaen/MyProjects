@@ -10,7 +10,7 @@
     "server": "npm run watch --prefix SourceCode/Server",
     "client": "npm run start --prefix SourceCode/Client",
     "watch": "npm run server & npm run client",
-    "deploy": "npm run build --prefix SourceCode/Client && npm start",
+    "deploy": "npm run build --prefix SourceCode/Client && npm start --prefix SourceCode/Server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -52,3 +52,10 @@ we replace && with &  `& will run first command in background and will also run 
 1. `morgan` to get additional functionality
     1. allows us to log in different formats
     2. we can use the most common combined format
+
+> we are following a layered architecture pattern 
+>> `User Interface`, `Buisness Logic`, `Data access`
+>>> sometime's these are standalone or combined with mvc
+>>> these layer's are know as `SEPARATION OF CONCERN ( SoC )` each sessoin address a separate concern
+
+## testing our application

@@ -17,7 +17,7 @@ const launch = {
 launches.set( launch.flightNumber, launch );
 
 
-// DATA ACCESS FUNCTION
+// DATA ACCESS FUNCTION'S
 function getAllLaunches(){
     return Array.from(launches.values());
 }
@@ -31,7 +31,20 @@ function addNewLaunch( launch ){
     } ) );
 }
 
+function existsLaunchWithId( launchId ){
+    return launches.has( launchId );
+}
+
+function abortLaunchById( launchId ){
+    const abordedLaunch = launches.get( launchId );
+    abordedLaunch.upcoming = false;
+    abordedLaunch.success = false;
+    return abordedLaunch;
+}
+
 module.exports = {
   getAllLaunches,
-  addNewLaunch
+  addNewLaunch, 
+  existsLaunchWithId,
+  abortLaunchById
 };
