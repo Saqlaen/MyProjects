@@ -65,7 +65,7 @@ async function getAllPlanets(){
     return await planets.find( {}, // filter document's based on a criteria
         {
             '__v': 0,
-            '__id': 0,
+            '_id': 0,
         }, // projection allow's us to tell which field's are included in the response    
     );
 }

@@ -28,10 +28,10 @@ async function saveLaunch( launch ){
         throw new Error( 'Noo matching planet was found');
     }
     
-    await launches.updateOne( {
+    await launches.findOneAndUpdate( {
       flightNumber: launch.flightNumber
-    }, launch, {
-        upsert: true,
+    }, launch, { // findOneAndUpdate will return only the properties we set in this launch it won't send us the '$setOnInsert': { __v : 0 } 
+        upsert: true, // will insert the launch if it doesn't exist
     });
 }
 
@@ -63,15 +63,21 @@ async function addNewLaunch( launch ){
     await saveLaunch( newLaunch );
 }
 
-function existsLaunchWithId( launchId ){
-    return launches.has( launchId );
+async function existsLaunchWithId( launchId ){
+    return await launches.findOne( { 
+        flightNumber: launchId 
+    }, );
 }
 
-function abortLaunchById( launchId ){
-    const abordedLaunch = launches.get( launchId );
-    abordedLaunch.upcoming = false;
-    abordedLaunch.success = false;
-    return abordedLaunch;
+async function abortLaunchById( launchId ){
+    const aborted =  await launches.updateOne( {
+        flightNumber: launchId,
+    }, {
+       upcoming: false,
+       success: false, 
+    } );
+    // in aborted will get the metadata about the info we have on the operation to mongo
+    return aborted.ok === 1 && aborted.nModified === 1;
 }
 
 module.exports = {
