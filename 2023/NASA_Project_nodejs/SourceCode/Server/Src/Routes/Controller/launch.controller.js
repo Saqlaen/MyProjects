@@ -5,11 +5,11 @@ const {
   abortLaunchById,
 } = require("../../Models/launches.model");
 
-function httpGetAllLaunches( req, res ){
-    return res.status(200).json( getAllLaunches());
+async function httpGetAllLaunches( req, res ){
+    return res.status(200).json( await getAllLaunches() );
 }
 
-function httpAddNewLaunch( req, res ){
+async function httpAddNewLaunch( req, res ){
     const launch = req.body;
 
     if( !launch.mission ||
@@ -30,7 +30,7 @@ function httpAddNewLaunch( req, res ){
             "error": 'invalid date'
         })
     }
-    addNewLaunch(launch);
+    await addNewLaunch( launch );
 
     return res.status( 201 ).json( launch )
 }
