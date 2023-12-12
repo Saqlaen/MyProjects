@@ -1,151 +1,69 @@
 #!/usr/bin/env node
 
+// NPM PACKAGE'S
+import chalk from 'chalk';
+import figlet from 'figlet';
+
+
+// NODE BUILT-IN's
+import path from 'path';
+import url from 'url';
+
+// USER DEFINED MODULE
+import displayTree from './display.Tree.js';
+import cleanUp from "./moveFiles.js";
+
+// WORK AROUND for __dirname and __filename because they are not available with esmodule's
+const __filename = url.fileURLToPath( import.meta.url );
+const __dirname = path.dirname( __filename );
+
 const arg = process.argv.slice(2);
-const fs = require("fs");
-const path = require("path");
-
 const command = arg[0];
-const argDir = arg[1] === undefined ? __dirname : arg[1];
+const argDir = arg[1] === "." ? process.cwd() : arg[1];
 const isOnlyDirs = arg[2];
-const extensions = new Set();
-const extension_arr = [];
 
-switch (command) {
-  case "test":
-    console.log(process.argv);
-    console.log(arg[1].split(","));
-    break;
-  case "tree":
-    
-    var txt_filePath = path.join(argDir, `${path.basename(argDir)}_tree.txt`);
-    if( isOnlyDirs === '-d' ){
-        fs.appendFileSync(txt_filePath, `--------------------\nDIRECTORY's\n--------------------\n`, "utf-8");
+async function callFiglet(msg, color = chalk.bold.rgb(71, 44, 232)) {
+  await figlet(msg, (err, data) => {
+    if (err) {
+      console.log("something went wrong with figlet");
+      return;
     }
-    else{
-        fs.appendFileSync( txt_filePath,`--------------------\nFILE's\n--------------------\n`,"utf-8");
-    }
-    displayTree(argDir, "", txt_filePath);
-
-    extensions.forEach((e) => {
-      fs.appendFileSync(txt_filePath, `Extensions -> ${e}\n`, "utf-8");
-      extension_arr.push(e);
-    });
-
-    console.log(extension_arr);
-    console.log(
-      `Saved the tree in -> ${txt_filePath}`,
-      path.basename(argDir)
-    );
-    break;
-  case "cleanup":
-    break;
-  case "help":
-    console.log(
-      `└──file-orgy tree "DIRNAME" / file-orgy tree\n└──file-orgy cleanup "DIRNAME"\n└──file-orgy help `
-    );
-    break;
-  default:
-    console.log(
-      "<----------------------- PLEASE INPUT THE RIGHT COMMAND TRY USING ----------------------->"
-    );
-    console.log("├──file-orgy help");
-    break;
+    console.clear();
+    console.log( color(data) );
+  });
 }
 
-// const srt_regex = /\.jpg$/;
-// const html_regex = /\.mp4$/;
+switch (command) { 
+  case "test":
+    await callFiglet( 'Just For Testing Purpose')
+    console.log( chalk.bold(process.argv) );
+    if( arg[1] )
+        console.log( arg[1].split(",") );
+    break;
 
-// const toBeRemoved = [];
-// let subdirs = ["jpg", "mp4"];
+  case "tree":
+    await callFiglet( `You've  summonned the  tree...`);
+    var txt_filePath = path.join( argDir, `${path.basename(argDir)}_tree.txt`);
+    displayTree(argDir, "", txt_filePath, isOnlyDirs );
+    break;
 
-// console.log(__dirname);
+  case "cleanup":
+    await callFiglet("Wise Choice !!!!");
+    cleanUp(argDir);
+    break;
 
-// // DIR THAT I WANT TO CLEAN UP
-// const dest_dir = path.join("/mnt", "e", "insta save");
+  case "help":
+    await callFiglet("Help  is  here !!!!");
+    const info = chalk.bold.greenBright
+    console.log(
+      info(
+        `└──file-orgy <command> <dirname> [ flag ]\n --command [ test, tree, cleanup, help ]\n --dirname . ( to perform operation on cwd or absolute path )\n --flag [ -d ]\n\n└──file-orgy tree "dirname" / file-orgy tree .\n└──file-orgy cleanup "dirname" `
+      )
+    );
+    break;
 
-// // ADDING SUBDIRS AT THE TOP LEVEL
-// subdirs.forEach((ele) => {
-//   const subdir_path = path.join(dest_dir, `delete_me_${ele}`);
-//   if (!fs.existsSync(subdir_path)) {
-//     fs.mkdirSync(subdir_path);
-//   }
-// });
-
-// // TO LOG ITEMS THAT HAVE BEEN MOVED
-// setTimeout(() => {
-//   console.log(toBeRemoved);
-// }, 2000);
-
-// const removeJunk = (dir) => {
-//   fs.readdir(dir, (err, files) => {
-//     if (err) {
-//       console.log(err.message);
-//     }
-//     files.forEach( (file) => {
-//       let src_path = path.join(dir, file);
-//       if (fs.statSync(src_path).isDirectory()) {
-//         if (
-//           file === "delete_me_jpg" ||
-//           file === "delete_me_mp4" ||
-//           file === "GYM" ||
-//           file === "OTHERS" ||
-//           file === "M"
-//         ) {
-//           console.log("NOT GONNA GO INSIDE -> ", file);
-//         } else {
-//           console.log("DIR -> ", src_path);
-//           removeJunk(src_path);
-//         }
-//       }
-
-//       if (srt_regex.test(file)) {
-//         let toBeMovedDir = path.join(dest_dir, "delete_me_jpg", file );
-//         fs.rename(src_path, toBeMovedDir, (err) => {
-//           console.log(err);
-//         });
-//         toBeRemoved.push(file);
-//       }
-//       if (html_regex.test(file)) {
-//         let toBeMovedDir = path.join(dest_dir, "delete_me_mp4", file) ;
-//         fs.rename(src_path, toBeMovedDir, (err) => {
-//           console.log(err);
-//         });
-//         toBeRemoved.push(file);
-//       }
-//     });
-//   });
-// };
-
-// removeJunk(dest_dir);
-
-function displayTree(dir, indent = "", filePath) {
-  if (fs.statSync(dir).isDirectory()) {
-    // logic for DIRECTORY
-    let subDirs = fs.readdirSync(dir);
-
-    let log = indent + "└──" + path.basename(dir) + "\n";
-    fs.appendFileSync(filePath, log, "utf-8");
-    console.log(indent + "└──" + path.basename(dir));
-
-    subDirs.forEach((e) => {
-      let subDirPath = path.join(dir, e);
-      if (
-        path.basename(dir) === "node_modules" ||
-        path.basename(dir) === ".git"
-      ) {
-        return;
-      }
-      displayTree(subDirPath, indent + "|\t", filePath);
-    });
-  } else {
-    if( isOnlyDirs !== '-d'){
-        // logic for FILES
-        let log = indent + "|--" + path.basename(dir) + "\n";
-        fs.appendFileSync(filePath, log, "utf-8");
-        console.log(indent + "|--" + path.basename(dir));
-    
-        // storing the type of file extension to the set
-        extensions.add(path.extname(dir));
-    }
-  }
+  default:
+    await callFiglet('Type  the  following  U dumb fuckk ')
+    console.log( chalk.bold.redBright("├──file-orgy help") );
+    break;
 }

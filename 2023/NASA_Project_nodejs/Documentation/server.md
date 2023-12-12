@@ -1,13 +1,13 @@
 # server
 
-some info
+### `content's`
 
 ## setting up the project
 
 need to initialize the folder
 
 ```nodejs
-npm init -y
+npm init -y //giving yes to all the prompts
 ```
 
 ## installing the required dependencies
@@ -45,6 +45,7 @@ in script's add the following's
 ```
 
 npm run server && npm run client `&& will wait till npm run server to complete and then run npm run client`
+
 we replace && with &  `& will run first command in background and will also run the other command`
 
 ### npm packages used
