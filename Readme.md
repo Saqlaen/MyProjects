@@ -9,15 +9,13 @@ Project
 │   ├── Documentation
 │   ├── Designs
 │   ├── SourceCode
-│   ├── Resources
-│   └── Tests
+│   └──  Resources
 │
 ├── 2023
 │   ├── Documentation
 │   ├── Designs
 │   ├── SourceCode
-│   ├── Resources
-│   └── Tests
+│   └──  Resources
 │
 └── Archive
     ├── ProjectArchive_2020
@@ -27,4 +25,25 @@ Project
 
 ## CLI's
 
-1. we have a file-orgy commad which we can use to list out the dir's or file's in terminal type `file-orgy help`
+1. we have a file-orgy commad which we can use to list out the dir's or file's in terminal type `file-orgy help`\
+
+## TO-DO's
+
+create one more command called generate-template
+
+-> if you give a path it should create the following dir's and their respective file's
+```   
+   ├── Documentation
+   ├── Designs
+   ├── SourceCode
+   └──  Resources
+```
+
+-> if you do not pass a path take that cwd and prompt for a name for your project and create these dir's and file's
+    use that as a project name
+```   
+   ├── Documentation
+   ├── Designs
+   ├── SourceCode
+   └──  Resources
+```

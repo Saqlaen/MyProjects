@@ -4,6 +4,7 @@ const request = require('supertest');
 const { connectToMongoDb, disconnectFromMongoDb } = require('../Common/mongo')
 
 const app = require('../app');
+const API_Version = `/v1`
 
 // we will use a feature of jest that allows us to setup an environment for our test inside of a describe block
 
@@ -27,7 +28,7 @@ describe( 'Test Launches API', () => {
         // //assertion statements
         // expect( response.statusCode ).toBe( 200 );
         const response = await request(app)
-          .get("/launches")
+          .get(`${API_Version}/launches`)
           .expect("Content-Type", /json/) //supertest assertion's
           .expect(200); //supertest assertion's
       });
@@ -60,7 +61,7 @@ describe( 'Test Launches API', () => {
         
         
         const res = await request(app)
-          .post("/launches")
+          .post(`${API_Version}/launches`)
           .send(launchWithCompleteDate)
           .expect("Content-Type", /json/)
           .expect(201); // 201 CREATED
@@ -78,10 +79,10 @@ describe( 'Test Launches API', () => {
       test('should catch missing required properties', async () => {
         
         const res = await request(app)
-          .post("/launches")
-          .send( launchWithoutDate )
+          .post(`${API_Version}/launches`)
+          .send(launchWithoutDate)
           .expect("Content-Type", /json/)
-          .expect( 400 ); 
+          .expect(400); 
     
         expect(res.body).toStrictEqual({
           error: "missing required launch property",
@@ -92,10 +93,10 @@ describe( 'Test Launches API', () => {
       test('should catch invalid dates', async () => {
         
         const res = await request(app)
-          .post("/launches")
-          .send( invalidLaunchDate )
+          .post(`${API_Version}/launches`)
+          .send(invalidLaunchDate)
           .expect("Content-Type", /json/)
-          .expect( 400 ); 
+          .expect(400); 
     
         expect(res.body).toStrictEqual({
                 "error": 'invalid date'

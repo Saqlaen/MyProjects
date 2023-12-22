@@ -1,15 +1,18 @@
+require('dotenv').config();
+
 const http = require('http');
+
 const app = require('./app');
-const { connectToMongoDb } = require("./Common/mongo");
+const { connectToMongoDb } = require("./Services/mongo");
 const { loadPlanetsData } = require('./Models/planets.model');
-
-
+const { loadLaunchData } = require('./Models/launches.model');
 
 async function startServer(){
 
-    await connectToMongoDb();
     try{
+        await connectToMongoDb();
         await loadPlanetsData();
+        await loadLaunchData();
     }
     catch( err ){
         console.log( err );

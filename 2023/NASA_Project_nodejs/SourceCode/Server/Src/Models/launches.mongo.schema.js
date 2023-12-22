@@ -11,7 +11,8 @@ const launchSchema = new mongoose.Schema({
   launchDate: { type: Date, required: true },
   rocket: { type: String, required: true },
   //   target: { type: mongoose.ObjectId, ref: 'Planet' } // these makes it difficult becuase we have to write our own join function
-  target: { type: String, required: true },
+  target: { type: String },
+  mission: { type: String, required: true },
   customer: { type: [String], required: true },
   upcoming: { type: Boolean, required: true },
   success: { type: Boolean, required: true, default: true },

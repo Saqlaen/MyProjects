@@ -1,0 +1,19 @@
+name: NASA Project CI workflow
+on: 
+# here you will list the trigger's
+  push: # when any push happens
+    branches: [ main ] # branch to keep an eye on
+  pull_request: # when any PR is merged
+    branches: [ main ]
+# here you are gonna define your job the steps you wanna perform
+jobs: 
+  build: # this is for building our app similarly we can have one for deploying
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v1 # we mentino the version so the workflow doesn't break when we trigger 
+      - name: Use Node.js v20
+        uses: actions/setup-node@v1
+        with: 
+          node-version: "20"
+      - run: npm install
+      - run: npm run build --prefix SourceCode/Client

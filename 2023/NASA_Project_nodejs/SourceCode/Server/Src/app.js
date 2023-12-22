@@ -4,8 +4,7 @@ const cors = require('cors');
 
 const path = require('path');
 
-const planetsRouter = require('./Routes/planets.router')
-const launchesRouter = require('./Routes/launch.router')
+const v1_API = require('./Routes/api_v1')
 
 const app = express();
 
@@ -23,11 +22,10 @@ app.use( morgan('combined') )
 app.use( express.json() );
 
 // serving the static files we get from react build
-app.use( express.static( path.join( __dirname, '..', 'Public' )))
+app.use( express.static( path.join( __dirname, '..', 'Public' )));
 
-// adding our route handler's
-app.use("/planets", planetsRouter);
-app.use( '/launches', launchesRouter );
+// versioning our api
+app.use('/v1', v1_API );
 
 // request's from browser
 app.get('/*', ( req, res ) => {
