@@ -8,12 +8,23 @@ on:
 # here you are gonna define your job the steps you wanna perform
 jobs: 
   build: # this is for building our app similarly we can have one for deploying
+    env:
+      CI: true # this is to disable watch mode when you are in testing
+      MONGO_URL: mongodb://localhost/nasa
+    strategy: 
+      matrix: 
+        node-version: [ 18.x, 19.x, 20.x ]
+        mongodb-version: ['4.2', '4.4' ]
     runs-on: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v1 # we mentino the version so the workflow doesn't break when we trigger 
-      - name: Use Node.js v20
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2 # we mention the version so the workflow doesn't break when we trigger 
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with: 
-          node-version: "20"
+          node-version: ${{ matrix.node-version }}
+      - name: mongoDB for Github Actions
+      - uses: supercharge/mongodb-github-action@1.10.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
       - run: npm install
       - run: npm run build --prefix SourceCode/Client

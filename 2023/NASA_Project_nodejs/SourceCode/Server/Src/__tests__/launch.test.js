@@ -1,7 +1,8 @@
 const request = require('supertest');
 // using supertest to startup our server using our express app;
 
-const { connectToMongoDb, disconnectFromMongoDb } = require('../Common/mongo')
+const { connectToMongoDb, disconnectFromMongoDb } = require('../Services/mongo');
+const { loadPlanetsData } = require("../Models/planets.model");
 
 const app = require('../app');
 const API_Version = `/v1`
@@ -12,6 +13,7 @@ describe( 'Test Launches API', () => {
 
     beforeAll( async () => {
         await connectToMongoDb();
+        await loadPlanetsData();
     } );
 
     afterAll( async () => {

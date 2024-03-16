@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/browse/react@18.0.0-rc.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.0.0-rc.0/umd/react-dom.development.js"></script>
+    <script>
+        const Person = ( props ) => {
+            return React.createElement('div', {},[
+                React.createElement('h1', {}, props.name ),
+                React.createElement('p', {}, props.ocuupation ),
+            ])
+        }
+        const App = () => {
+            return React.createElement( 
+                    'div', // element i want to have
+                    {}, // key value pairs if i want to have any properties for the element
+                    [
+                        React.createElement(
+                            'h1',
+                            { 
+                                class:'title',
+                            },
+                            'React is rendered'
+                        ),
+                        React.createElement( Person, {name: 'Yihua', ocuupation:'Lead'}, null ),
+                        React.createElement( Person, {name: 'Yihua', ocuupation:'Lead2'}, null ),
+                        React.createElement( Person, {name: 'Yihua', ocuupation:'Lead3'}, null ),
+                        React.createElement( Person, {name: 'Yihua', ocuupation:'Lead4'}, null ),
+                        React.createElement( Person, {name: 'Yihua', ocuupation:'Lead5'}, null ),
+                    ]  // if you wanna nest any children inside it
+
+                )
+        };
+        ReactDom.render( React.createElement(App), document.getElementById('root') );
+    </script>
+</body>
+</html>
