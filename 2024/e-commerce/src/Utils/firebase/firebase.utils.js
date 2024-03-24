@@ -2,11 +2,18 @@
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
-  signInWithRedirect,
+//   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
 // import { getAnalytics } from "firebase/analytics";
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDoc,
+  setDoc,
+} from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,6 +32,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(firebaseApp);
+export const db = getFirestore( firebaseApp );
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
@@ -35,3 +43,27 @@ export const auth = getAuth();
 export const signInWithGooglePopUp = () => signInWithPopup(auth, provider);
 
 export default firebaseApp;
+
+export const createUserDocWithAuth = async ( userAuth ) => {
+    // firestore gives us a doc reference which we use to set or get a doc
+    const userDocRef = doc( db, 'users', userAuth.uid );
+    console.log( 'userDocRef', userDocRef );
+
+    const userSnapShot = await getDoc( userDocRef );
+    // create use doc if it does not exists 
+    if( !userSnapShot.exists() ){
+        const { displayName, email } = userAuth;
+        const createdAt = new Date();
+        try{
+            await setDoc( userDocRef, {
+                displayName,
+                email,
+                createdAt
+            });
+        }
+        catch( err ){
+            console.log( 'error creating a error ', err.message  )
+        }
+    }
+    return userDocRef;
+}
